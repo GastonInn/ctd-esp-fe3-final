@@ -10,7 +10,6 @@ const Form = () => {
     const sendForm = (data) => {
         alert("Tu consulta fue enviada con exito.");
         console.log(data);
-        console.log(initialValues);
     }
 
     const { handleSubmit, handleChange, values, errors } = useFormik({

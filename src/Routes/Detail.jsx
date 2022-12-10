@@ -22,8 +22,8 @@ const Detail = () => {
     }, []);
 
     return (
-        <div style={{ padding: "20px 0" }}>
-            <h1 style={{ display: "block", marginBottom: "30px" }}>Detail Dentist {id} </h1>
+        <div style={{ padding: "0 20px 30px 0" }}>
+            <h1 style={{ display: "block", marginBottom: "20px" }}>Detail Dentist {id} </h1>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }}>
                     <TableHead>

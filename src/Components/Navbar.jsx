@@ -41,8 +41,8 @@ const Navbar = () => {
         <Box className={theme} sx={{ marginBottom: "80px" }}>
             <AppBar position="fixed">
                 <Toolbar sx={{ marginInline: "75px" }}>
-                    <Typography variant="h5" sx={{ flexGrow: "1" }}>
-                        <span style={{ color: "red", fontSize: "30px" }}>D</span>H odonto
+                    <Typography variant="h5" sx={{ flexGrow: "1", fontSize: "35px" }}>
+                        <span style={{ color: "red", fontSize: "40px" }}>D</span>H odonto
                     </Typography>
                     <Grid item>
                         <Grid container item direction="row">

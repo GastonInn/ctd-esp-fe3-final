@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Card from "../Components/Card";
 import { ContextGlobal } from "../Components/utils/global.context";
 
+
 const Favs = () => {
 
     const { store } = useContext(ContextGlobal);

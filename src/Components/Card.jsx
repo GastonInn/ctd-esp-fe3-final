@@ -5,7 +5,6 @@ import { ContextGlobal } from "./utils/global.context";
 import { Typography, Card as MaterialCard, CardMedia, CardContent, Button } from "@mui/material";
 
 
-
 const Card = ({ name, username, id }) => {
 
     const { dentistImage } = images;

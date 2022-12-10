@@ -1,7 +1,7 @@
+import React from 'react'
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 
-import React from 'react'
 
 const PageNotFound = () => {
     const [location, setLocation] = useState(useLocation())

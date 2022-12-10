@@ -90,6 +90,7 @@ export const ContextProvider = ({ children }) => {
         axios.get("https://jsonplaceholder.typicode.com/users/")
             .then(res => {
                 dispatch({ type: "dentists", payload: res.data })
+                //console.log("cargando datos de paciente inicial");
             })
             .catch(err => {
                 console.log(err)

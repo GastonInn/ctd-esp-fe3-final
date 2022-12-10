@@ -20,8 +20,8 @@ test("Testeando si en la pantalla se visualiza el texto Contact del navbar", asy
     expect(texto.textContent).toBe("Contact")
 })
 
-test('Testeando si se renderiza el boton de submit del formulario', () => {
+test("Testeando si se renderiza el boton de submit del formulario", () => {
     render(<Contact/>);
-    const btnSubmit= screen.getByRole('button', {name: /Enviar/i})
-    expect(btnSubmit).toBeInTheDocument();
+    const buttonSubmit = screen.getByRole('button', {name: /Enviar/i})
+    expect(buttonSubmit).toBeInTheDocument();
 })

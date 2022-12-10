@@ -14,41 +14,41 @@ export const initialState = {
 const palettes = {
     light: createTheme({
         palette: {
-            mode: 'light',
+            mode: "light",
             primary: {
-                main: '#fff',
-                light: '#6e6161'
+                main: "#fff",
+                light: "#6e6161"
             },
             secondary: {
-                main: '#000',
-                light: '#514b4bd5d'
+                main: "#000",
+                light: "#514b4bd5d"
             },
             background: {
-                default: '#f3f3f3'
+                default: "#f3f3f3"
             },
             text: {
-                primary: '#000',
-                secondary: '#000',
+                primary: "#000",
+                secondary: "#000",
             }
         },
     }),
     dark: createTheme({
         palette: {
-            mode: 'dark',
+            mode: "dark",
             primary: {
-                main: '#000',
-                light: '#514b4bd5d'
+                main: "#000",
+                light: "#514b4bd5d"
             },
             secondary: {
-                main: '#dbcfcf',
-                light: '#fff'
+                main: "#dbcfcf",
+                light: "#fff"
             },
             background: {
-                default: '#000',
+                default: "#000",
             },
             text: {
-                primary: '#fff',
-                secondary: '#fff',
+                primary: "#fff",
+                secondary: "#fff",
             }
         }
     })
@@ -56,7 +56,7 @@ const palettes = {
 
 const reducerFunction = (state, action) => {
     switch (action.type) {
-        case 'theme':
+        case "theme":
             //console.log(action.activeDarkTheme)
             return {
                 ...state,
@@ -90,7 +90,7 @@ export const ContextProvider = ({ children }) => {
         axios.get("https://jsonplaceholder.typicode.com/users/")
             .then(res => {
                 dispatch({ type: "dentists", payload: res.data })
-                //console.log("cargando datos de paciente inicial");
+                //console.log("Cargando datos de odontologos inicial");
             })
             .catch(err => {
                 console.log(err)

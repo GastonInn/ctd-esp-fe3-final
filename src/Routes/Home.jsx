@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react'
-import Card from '../Components/Card'
-import { ContextGlobal } from '../Components/utils/global.context'
-import axios from 'axios'
+import React, { useContext, useEffect, useState } from "react"
+import axios from "axios"
+import { ContextGlobal } from "../Components/utils/global.context"
+import Card from "../Components/Card"
 
 
 const Home = () => {
@@ -14,7 +14,7 @@ const Home = () => {
     const getData = async () => {
         const { data } = await axios.get(dentistUrl);
         dispatch({ type: "dentists", payload: data });
-        //console.log("cargando datos de paciente desde home");
+        //console.log("Cargando datos de odontologos desde home");
     };
 
     useEffect(() => {
@@ -24,7 +24,7 @@ const Home = () => {
     return (
         <main className={theme} >
             <h1>Home</h1>
-            <div className='card-grid'>
+            <div className="card-grid">
                 <div className={"cardContainerDiv"} >
                     {
                         data.map((data, index) => {

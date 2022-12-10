@@ -1,9 +1,9 @@
-import { render, screen } from "@testing-library/react";
-import React from 'react'
+import React from "react"
 import "@testing-library/jest-dom/extend-expect";
+import { render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import App from '../App';
 import axios from "axios";
+import App from "../App";
 import Contact from "../Routes/Contact";
 
 const fetchData = () => axios.get("https://jsonplaceholder.typicode.com/users/");
@@ -20,8 +20,8 @@ test("Testeando si en la pantalla se visualiza el texto Contact del navbar", asy
     expect(texto.textContent).toBe("Contact")
 })
 
-test("Testeando si se renderiza el boton de submit del formulario", () => {
+test("Testeando si se renderiza el boton de submit del formulario que se encuentra en el componente Contact", () => {
     render(<Contact/>);
-    const buttonSubmit = screen.getByRole('button', {name: /Enviar/i})
+    const buttonSubmit = screen.getByRole("button", {name: /Enviar/i})
     expect(buttonSubmit).toBeInTheDocument();
 })

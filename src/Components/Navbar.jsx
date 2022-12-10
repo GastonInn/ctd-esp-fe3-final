@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import LightModeIcon from '@mui/icons-material/LightMode';
-import Brightness2Icon from '@mui/icons-material/Brightness2';
-import { ContextGlobal } from './utils/global.context';
-import { Grid, AppBar, Box, Toolbar, Typography, Button } from '@mui/material';
+import React, { useContext } from "react"
+import { Link } from "react-router-dom"
+import { ContextGlobal } from "./utils/global.context";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import Brightness2Icon from "@mui/icons-material/Brightness2";
+import { Grid, AppBar, Box, Toolbar, Typography, Button } from "@mui/material";
 
 
 const Navbar = () => {
@@ -13,10 +13,10 @@ const Navbar = () => {
     const { theme, activeDarkTheme } = state;
 
     const buttonSize = {
-        maxWidth: '45px',
-        maxHeight: '45px',
-        minWidth: '45px',
-        minHeight: '45px'
+        maxWidth: "45px",
+        maxHeight: "45px",
+        minWidth: "45px",
+        minHeight: "45px"
     }
 
     const linkColor = {

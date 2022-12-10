@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom"
 import { images } from "./utils/images";
 import { ContextGlobal } from "./utils/global.context";
 import { Typography, Card as MaterialCard, CardMedia, CardContent, Button } from "@mui/material";
@@ -54,7 +54,7 @@ const Card = ({ name, username, id }) => {
                     }}>{username}</Typography>
                 <Button sx={{ 
                     backgroundColor: "rgba(136, 136, 136, 0.468)", 
-                    '&:hover': { 
+                    "&:hover": { 
                         backgroundColor: "#0047AB" 
                         } }} onClick={() => handleFav(dentistFavs, name, username, id)} 
                         className="favButton"> {isFav(id) ? "❌" : "⭐"}

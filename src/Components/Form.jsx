@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Button, TextField } from '@mui/material'
-import { useFormik } from 'formik';
+import { Button, TextField } from "@mui/material"
+import { useFormik } from "formik";
 import * as Yup from "yup"
 
 
@@ -25,7 +25,7 @@ const Form = () => {
 
     return (
         <div>
-            <form className='form-container form' onSubmit={handleSubmit}>
+            <form className="form-container form" onSubmit={handleSubmit}>
                 <TextField
                     type="text"
                     id="outlined-basic"

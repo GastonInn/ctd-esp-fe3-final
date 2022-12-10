@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import axios from 'axios';
-import { TableContainer, TableHead, TableBody, Table, TableRow, TableCell, Paper } from '@mui/material';
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import axios from "axios";
+import { TableContainer, TableHead, TableBody, Table, TableRow, TableCell, Paper } from "@mui/material";
 
 
 const Detail = () => {
@@ -22,10 +22,10 @@ const Detail = () => {
     }, []);
 
     return (
-        <div style={{ padding: "0 20px 30px 0" }}>
+        <div style={{ paddingBottom: "30px" }}>
             <h1 style={{ display: "block", marginBottom: "20px" }}>Detail Dentist {id} </h1>
             <TableContainer component={Paper}>
-                <Table sx={{ minWidth: 650 }}>
+                <Table sx={{ minWidth: 700}}>
                     <TableHead>
                         <TableRow>
                             <TableCell align={ tableAlign }>Name</TableCell>

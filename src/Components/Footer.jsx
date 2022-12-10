@@ -34,11 +34,16 @@ const Footer = () => {
 
             <Box className={theme} component='footer'>
                 <Container >
-                    <Grid container sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <Grid container sx={{ 
+                        display: "flex", 
+                        justifyContent: "space-between", 
+                        alignItems: "center" }}>
                         <Grid item>
                             <img className={activeDarkTheme ? "footerImgs" : ""} style={{ width: "260px" }} src={logoSrc} alt={logoAlt} />
                         </Grid>
-                        <Grid item sx={{ display: "flex", gap: "12px" }}>
+                        <Grid item sx={{ 
+                            display: "flex", 
+                            gap: "12px" }}>
                             {
                                 icons.map(({ iconSrc, iconAlt }) => {
                                     return (

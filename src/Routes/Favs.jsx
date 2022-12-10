@@ -2,8 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import Card from "../Components/Card";
 import { ContextGlobal } from "../Components/utils/global.context";
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Favs = () => {
 
     const { store } = useContext(ContextGlobal);
@@ -17,8 +15,8 @@ const Favs = () => {
     }, [dentistFavs])
 
     return (
-        <div style={{ marginBottom: "40px" }}>
-            <h1 style={{ display: "block", marginBottom: "20px" }}>Dentists Favs</h1>
+        <div className="favDiv">
+            <h1 className="favH1">Dentists Favs</h1>
             <div className="card-grid">
                 {favs?.length
                     ? favs.map((dentistFav) => (

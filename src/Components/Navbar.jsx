@@ -12,16 +12,29 @@ const Navbar = () => {
     const { state, dispatch } = store;
     const { theme, activeDarkTheme } = state;
 
-    const cambiarTema = (activeDarkTheme) => {
-        dispatch({ type: "theme", activeDarkTheme: activeDarkTheme })
-        console.log(activeDarkTheme)
+    const buttonSize = {
+        maxWidth: '45px',
+        maxHeight: '45px',
+        minWidth: '45px',
+        minHeight: '45px'
     }
 
-    const buttonSize = {
-        maxWidth: '45px', 
-        maxHeight: '45px', 
-        minWidth: '45px', 
-        minHeight: '45px'
+    const linkColor = {
+        color: theme.palette.text.primary
+    }
+
+    const themeButton = {
+        white: { 
+            backgroundColor: "white", 
+            borderRadius: "10%" },
+        dark: { 
+            backgroundColor: "black", 
+            borderRadius: "10%" },
+    }
+
+    const cambiarTema = (activeDarkTheme) => {
+        dispatch({ type: "theme", activeDarkTheme: activeDarkTheme })
+        //console.log(activeDarkTheme)
     }
 
     return (
@@ -33,13 +46,13 @@ const Navbar = () => {
                     </Typography>
                     <Grid item>
                         <Grid container item direction="row">
-                            <Button><Link style={{ color: theme.palette.text.primary }} to="">Home</Link></Button>
-                            <Button><Link style={{ color: theme.palette.text.primary }} to="contact">Contact</Link></Button>
-                            <Button><Link style={{ color: theme.palette.text.primary }} to="favs">Favs</Link></Button>
-                            <Button sx={buttonSize} style={activeDarkTheme ? { backgroundColor: "white", borderRadius: "10%" } : { backgroundColor: "black", borderRadius: "10%" }}
+                            <Button><Link style={linkColor} to="">Home</Link></Button>
+                            <Button><Link style={linkColor} to="contact">Contact</Link></Button>
+                            <Button><Link style={linkColor} to="favs">Favs</Link></Button>
+                            <Button sx={buttonSize} style={activeDarkTheme ? themeButton.white : themeButton.dark }
                                 onClick={() => cambiarTema(activeDarkTheme)}>
                                 {activeDarkTheme ?
-                                    <LightModeIcon sx={{ color: "black" }} style={{ display: "flex" }} /> : <Brightness2Icon sx={{ color: "yellow" }} style={{ display: "flex" }} />
+                                    <LightModeIcon sx={{ color: "black" }} /> : <Brightness2Icon sx={{ color: "yellow" }} />
                                 }
                             </Button>
                         </Grid>

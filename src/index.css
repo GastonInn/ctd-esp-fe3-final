@@ -39,6 +39,10 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    margin: 0;
+}
+
 nav {
     display: flex;
     width: 100%;
@@ -162,11 +166,11 @@ footer.dark {
     color: white;
 }
 
-footer.dark .logo{
+footer.dark .logo {
     filter: invert(100%);
 }
 
-.darker {
+.linkDark {
     background-color: #000000d4;
     color: white;
 }
@@ -177,4 +181,36 @@ footer .footerImgs {
 
 .link {
     color: #FFF;
-  }
+}
+
+.cardContainerDiv {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.contactDiv {
+    margin: 100px 0;
+    text-align: center;
+}
+
+.contactP {
+    margin: 6px 0 12px 0;
+}
+
+.favH1 {
+    display: "block";
+    margin-bottom: "20px";
+} 
+
+.favDiv {
+    margin-bottom: 40px;
+}
+
+.notFoundDiv {
+    margin: 20px 0;
+}

@@ -7,7 +7,7 @@ const PageNotFound = () => {
     const [location, setLocation] = useState(useLocation())
     console.log(location);
     return (
-        <div style={{margin:"20px 0"}}>
+        <div className="notFoundDiv">
             <h1>
                 No se encontro nada en la ruta: {location.pathname}
             </h1>

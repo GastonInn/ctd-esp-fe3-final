@@ -19,16 +19,16 @@ const Card = ({ name, username, id }) => {
     }
 
     const handleFav = (dentistFavs, name, username, id) => {
-        let newFavDentists = dentistFavs;
-        if (newFavDentists.filter(e => e.id === id) < 1) {
-            newFavDentists.push({ name, username, id })
+        let newStorageDentists = dentistFavs;
+        if (newStorageDentists.filter(e => e.id === id) < 1) {
+            newStorageDentists.push({ name, username, id })
             alert("Dentist added succesfully");
         } else {
-            newFavDentists = newFavDentists.filter(e => e.id !== id)
+            newStorageDentists = newStorageDentists.filter(e => e.id !== id)
             alert("Dentist removed succesfully");
         }
-        localStorage.setItem("favs", JSON.stringify(newFavDentists));
-        dispatch({ type: "dentistFavs", dentistFavs: newFavDentists })
+        localStorage.setItem("favs", JSON.stringify(newStorageDentists));
+        dispatch({ type: "dentistFavs", dentistFavs: newStorageDentists })
 
     }
 
@@ -41,11 +41,25 @@ const Card = ({ name, username, id }) => {
                 alt={dentistAlt}
             />
             <CardContent>
-                <Typography style={{ fontSize: "15px", padding: "0", textAlign: "center" }}>
-                    <Link className={activeDarkTheme ? "darker" : ""} to={`/detail/${id}`}>{name}</Link>
+                <Typography sx={{ 
+                    fontSize: "15px", 
+                    padding: "0", 
+                    textAlign: "center" 
+                    }}>
+                    <Link className={activeDarkTheme ? "linkDark" : ""} to={`/detail/${id}`}>{name}</Link>
                 </Typography>
-                <Typography style={{ paddingBottom: "10px", margin: "0", textAlign: "center" }}>{username}</Typography>
-                <Button sx={{ backgroundColor: "rgba(136, 136, 136, 0.468)", '&:hover': { backgroundColor: "#0047AB" } }} onClick={() => handleFav(dentistFavs, name, username, id)} className="favButton">{isFav(id) ? "❌" : "⭐"}</Button>
+                <Typography sx={{ 
+                    paddingBottom: "10px", 
+                    margin: "0", 
+                    textAlign: "center" 
+                    }}>{username}</Typography>
+                <Button sx={{ 
+                    backgroundColor: "rgba(136, 136, 136, 0.468)", 
+                    '&:hover': { 
+                        backgroundColor: "#0047AB" 
+                        } }} onClick={() => handleFav(dentistFavs, name, username, id)} 
+                        className="favButton"> {isFav(id) ? "❌" : "⭐"}
+                        </Button>
             </CardContent>
         </MaterialCard>
     );

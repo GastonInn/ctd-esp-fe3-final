@@ -1,4 +1,4 @@
-import { createContext, useReducer, useMemo } from "react";
+import { createContext, useReducer, useEffect } from "react";
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import axios from "axios"
@@ -20,7 +20,8 @@ const palettes = {
                 light: '#6e6161'
             },
             secondary: {
-                main: '#000'
+                main: '#000',
+                light: '#514b4bd5d'
             },
             background: {
                 default: '#f3f3f3'
@@ -35,11 +36,12 @@ const palettes = {
         palette: {
             mode: 'dark',
             primary: {
-                main: '#242424',
-                light: '#373737'
+                main: '#000',
+                light: '#514b4bd5d'
             },
             secondary: {
-                main: '#fff'
+                main: '#dbcfcf',
+                light: '#fff'
             },
             background: {
                 default: '#000',
@@ -55,7 +57,7 @@ const palettes = {
 const reducerFunction = (state, action) => {
     switch (action.type) {
         case 'theme':
-            console.log(action.activeDarkTheme)
+            //console.log(action.activeDarkTheme)
             return {
                 ...state,
                 activeDarkTheme: action.activeDarkTheme === true ? false : true,
@@ -84,7 +86,7 @@ export const ContextProvider = ({ children }) => {
     initialState.activeDarkTheme = false;
     const [state, dispatch] = useReducer(reducerFunction, initialState);
 
-    useMemo(() => {
+    useEffect(() => {
         axios.get("https://jsonplaceholder.typicode.com/users/")
             .then(res => {
                 dispatch({ type: "dentists", payload: res.data })

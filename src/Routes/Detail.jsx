@@ -4,13 +4,13 @@ import axios from 'axios';
 import { TableContainer, TableHead, TableBody, Table, TableRow, TableCell, Paper } from '@mui/material';
 
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Detail = () => {
 
     const { id } = useParams();
     const [dentist, setDentist] = useState({});
     const [dentistUrl, setDentistUrl] = useState(`https://jsonplaceholder.typicode.com/users/${id}`)
+
+    const tableAlign = "center";
 
     const getData = async () => {
         const { data } = await axios.get(dentistUrl);
@@ -28,18 +28,18 @@ const Detail = () => {
                 <Table sx={{ minWidth: 650 }}>
                     <TableHead>
                         <TableRow>
-                            <TableCell align="center">Name</TableCell>
-                            <TableCell align="center">Email</TableCell>
-                            <TableCell align="center">Phone</TableCell>
-                            <TableCell align="center">Website</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        <TableRow>
-                            <TableCell align="center">{dentist.name}</TableCell>
-                            <TableCell align="center">{dentist.email}</TableCell>
-                            <TableCell align="center">{dentist.phone}</TableCell>
-                            <TableCell align="center">{dentist.website}</TableCell>
+                            <TableCell align={ tableAlign }>Name</TableCell>
+                            <TableCell align={ tableAlign }>Email</TableCell>
+                            <TableCell align={ tableAlign }>Phone</TableCell>
+                            <TableCell align={ tableAlign }>Website</TableCell>
+                        </TableRow>  
+                    </TableHead>  
+                    <TableBody>  
+                        <TableRow>  
+                            <TableCell align={ tableAlign }>{ dentist.name }</TableCell>
+                            <TableCell align={ tableAlign }>{ dentist.email }</TableCell>
+                            <TableCell align={ tableAlign }>{ dentist.phone }</TableCell>
+                            <TableCell align={ tableAlign }>{ dentist.website }</TableCell>
                         </TableRow>
                     </TableBody>
                 </Table>
